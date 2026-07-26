@@ -44,7 +44,10 @@ const topFold = document.querySelector(".top-fold");
 
 const letter = document.querySelector(".letter");
 
-
+gsap.set(letter,{
+    opacity:0,
+    y:80
+});
 openBtn.addEventListener("click",()=>{
 
 console.log("Button clicked");
