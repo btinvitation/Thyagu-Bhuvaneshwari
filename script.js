@@ -61,7 +61,7 @@ openBtn.addEventListener("click",()=>{
 
     gsap.to(letter,{
 
-        y:-150,
+        y:-220,
 
         duration:1.5,
 
