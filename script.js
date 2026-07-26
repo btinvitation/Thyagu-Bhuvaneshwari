@@ -69,7 +69,7 @@ openBtn.addEventListener("click",()=>{
 
     delay:.5,
 
-    ease:"power3.out",
+    ease:"power3.out"
 
 });
 
