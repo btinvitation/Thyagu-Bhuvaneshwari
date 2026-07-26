@@ -1,150 +1,161 @@
 /* ==========================================
    BHUVANESHWARI ❤️ THYAGU
-   PREMIUM INVITATION
-   PART 1
+   INVITATION ANIMATIONS
 ========================================== */
 
-if (typeof AOS !== "undefined") {
-    AOS.init({
-        duration: 1000,
-        once: true
-    });
-}
 
 /* =========================
 LOADER
 ========================= */
 
-window.addEventListener("load", () => {
+window.addEventListener("load",()=>{
 
-    gsap.to("#loader", {
+    setTimeout(()=>{
 
-        opacity: 0,
+        gsap.to("#loader",{
 
-        duration: 1.2,
+            opacity:0,
 
-        delay: 2,
+            duration:1,
 
-        onComplete: () => {
+            onComplete:()=>{
 
-            document.getElementById("loader").style.display = "none";
+                document.querySelector("#loader").style.display="none";
 
-        }
+            }
 
-    });
+        });
+
+    },2000);
+
 
 });
 
+
+
 /* =========================
-ELEMENTS
+ENVELOPE OPEN
 ========================= */
 
-const envelope = document.querySelector(".envelope");
 
-const envelopeTop = document.querySelector(".envelope-top");
+const openBtn = document.getElementById("openBtn");
+
+const topFold = document.querySelector(".top-fold");
 
 const letter = document.querySelector(".letter");
 
-const openBtn = document.getElementById("openInvitation");
 
-const envelopeScreen = document.getElementById("envelope-screen");
+openBtn.addEventListener("click",()=>{
 
-const invitation = document.getElementById("mainInvitation");
 
-/* =========================
-INITIAL STATE
-========================= */
-
-gsap.set(invitation,{
-    display:"none",
-    opacity:0
-});
-
-gsap.set(openBtn,{
-    opacity:0,
-    pointerEvents:"none"
-});
-
-/* =========================
-ENVELOPE IDLE ANIMATION
-========================= */
-
-gsap.to(".envelope",{
-
-    y:-8,
-
-    duration:2,
-
-    repeat:-1,
-
-    yoyo:true,
-
-    ease:"power1.inOut"
-
-});
-
-/* =========================
-GOLD GLOW
-========================= */
-
-gsap.to(".envelope-shadow",{
-
-    scale:1.08,
-
-    duration:2,
-
-    repeat:-1,
-
-    yoyo:true,
-
-    ease:"sine.inOut"
-
-});
-
-/* =========================
-OPEN ENVELOPE
-========================= */
-
-let opened=false;
-
-envelope.addEventListener("click",()=>{
-
-    if(opened) return;
-
-    opened=true;
-
-    const tl=gsap.timeline();
-
-    tl.to(envelopeTop,{
+    gsap.to(topFold,{
 
         rotationX:-180,
 
-        duration:1,
-
-        transformOrigin:"top center",
+        duration:1.2,
 
         ease:"power2.inOut"
 
-    })
+    });
 
-    .to(letter,{
+
+    gsap.to(letter,{
 
         y:-150,
 
-        duration:1.3,
+        duration:1.5,
+
+        delay:.5,
 
         ease:"power3.out"
 
-    },"-=0.2")
+    });
 
-    .to(openBtn,{
 
-        opacity:1,
+    gsap.to(".tap-text",{
 
-        pointerEvents:"auto",
+        opacity:0,
 
         duration:.5
 
     });
+
+
+});
+
+/* =========================
+AOS INITIALIZATION
+========================= */
+
+AOS.init({
+
+    duration:1200,
+
+    once:true
+
+});
+
+
+
+/* =========================
+FLOWER PETALS
+========================= */
+
+function createPetals(){
+
+    const container = document.querySelector(".particles");
+
+
+    for(let i=0;i<40;i++){
+
+        let petal=document.createElement("span");
+
+
+        petal.className="petal";
+
+
+        petal.style.left=Math.random()*100+"%";
+
+
+        petal.style.animationDuration=
+
+        (5+Math.random()*5)+"s";
+
+
+        petal.style.animationDelay=
+
+        Math.random()*5+"s";
+
+
+        container.appendChild(petal);
+
+    }
+
+}
+
+
+createPetals();
+
+
+
+/* =========================
+SMOOTH OPEN EFFECT
+========================= */
+
+
+window.addEventListener("scroll",()=>{
+
+
+    let scrollValue = window.scrollY;
+
+
+    gsap.to(".gold-glow",{
+
+        y:scrollValue*0.2,
+
+        duration:0.5
+
+    });
+
 
 });
