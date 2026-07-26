@@ -47,7 +47,7 @@ const letter = document.querySelector(".letter");
 
 openBtn.addEventListener("click",()=>{
 
-
+console.log("Button clicked");
     gsap.to(topFold,{
 
         rotationX:-180,
