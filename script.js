@@ -4,10 +4,12 @@
    PART 1
 ========================================== */
 
-AOS.init({
-    duration: 1000,
-    once: true
-});
+if (typeof AOS !== "undefined") {
+    AOS.init({
+        duration: 1000,
+        once: true
+    });
+}
 
 /* =========================
 LOADER
