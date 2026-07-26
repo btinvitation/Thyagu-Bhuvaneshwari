@@ -1,1 +1,189 @@
+/* =====================================
+   Bhuvaneshwari ❤️ Thyagu Reception
+   Premium Invitation - Part 2
+====================================== */
 
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    overflow-x:hidden;
+    background:#000;
+    color:#fff;
+}
+
+/* Background */
+
+.background{
+    position:fixed;
+    inset:0;
+    background:url("assets/images/luxury-background.jpg.jpg") center center/cover no-repeat;
+    z-index:-2;
+}
+
+.background::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.45);
+}
+
+/* Hero */
+
+.hero{
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:25px;
+    position:relative;
+}
+
+.hero-content{
+    max-width:700px;
+    z-index:2;
+}
+
+.welcome{
+    font-family:'Cinzel',serif;
+    font-size:18px;
+    letter-spacing:2px;
+    color:#f6e7b4;
+    margin-bottom:20px;
+}
+
+.names{
+    font-family:'Cinzel',serif;
+    font-size:58px;
+    line-height:1.2;
+    color:#fff;
+    text-shadow:0 5px 15px rgba(0,0,0,.4);
+}
+
+.names span{
+    display:block;
+    color:#d4af37;
+    font-size:40px;
+    margin:12px 0;
+}
+
+.invite{
+    margin:30px auto;
+    max-width:600px;
+    line-height:1.8;
+    font-size:18px;
+    color:#f3f3f3;
+}
+
+#openInvitation{
+    border:none;
+    outline:none;
+    cursor:pointer;
+    padding:16px 40px;
+    border-radius:50px;
+    font-size:18px;
+    font-weight:600;
+    background:#d4af37;
+    color:#000;
+    transition:.35s;
+}
+
+#openInvitation:hover{
+    transform:translateY(-4px);
+    box-shadow:0 12px 25px rgba(212,175,55,.45);
+}
+
+/* Scroll Indicator */
+
+.scroll-indicator{
+    position:absolute;
+    left:50%;
+    bottom:35px;
+    transform:translateX(-50%);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:12px;
+    animation:float 2s infinite;
+}
+
+.scroll-indicator span{
+    font-size:14px;
+    letter-spacing:1px;
+    color:#fff;
+}
+
+.mouse{
+    width:28px;
+    height:48px;
+    border:2px solid #fff;
+    border-radius:30px;
+    display:flex;
+    justify-content:center;
+    padding-top:8px;
+}
+
+.wheel{
+    width:4px;
+    height:10px;
+    background:#fff;
+    border-radius:10px;
+    animation:scroll 1.6s infinite;
+}
+
+@keyframes scroll{
+
+    0%{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+    100%{
+        opacity:0;
+        transform:translateY(16px);
+    }
+
+}
+
+@keyframes float{
+
+    0%,100%{
+        transform:translate(-50%,0);
+    }
+
+    50%{
+        transform:translate(-50%,-8px);
+    }
+
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.names{
+    font-size:42px;
+}
+
+.names span{
+    font-size:28px;
+}
+
+.invite{
+    font-size:16px;
+}
+
+#openInvitation{
+    width:100%;
+}
+
+}
