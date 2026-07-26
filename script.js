@@ -61,15 +61,17 @@ openBtn.addEventListener("click",()=>{
 
     gsap.to(letter,{
 
-        y:-220,
+    opacity:1,
 
-        duration:1.5,
+    y:-180,
 
-        delay:.5,
+    duration:1.5,
 
-        ease:"power3.out"
+    delay:.5,
 
-    });
+    ease:"power3.out",
+
+});
 
 
     gsap.to(".tap-text",{
