@@ -1,51 +1,147 @@
-// ======================================
-// Bhuvaneshwari ❤️ Thyagu Reception
-// Step 5
-// ======================================
+/* ==========================================
+   BHUVANESHWARI ❤️ THYAGU
+   PREMIUM INVITATION
+   PART 1
+========================================== */
 
 AOS.init({
     duration: 1000,
     once: true
 });
 
-const envelope = document.querySelector(".envelope");
-const envelopeScreen = document.getElementById("envelope-screen");
-const hero = document.querySelector(".hero");
+/* =========================
+LOADER
+========================= */
 
-hero.style.display = "none";
+window.addEventListener("load", () => {
 
-// Tap the envelope to open
-envelope.addEventListener("click", function () {
+    gsap.to("#loader", {
 
-    if (!envelope.classList.contains("open")) {
+        opacity: 0,
 
-        envelope.classList.add("open");
+        duration: 1.2,
 
-    }
+        delay: 2,
+
+        onComplete: () => {
+
+            document.getElementById("loader").style.display = "none";
+
+        }
+
+    });
 
 });
 
-// Tap the button after the letter slides out
-document.getElementById("openLetter").addEventListener("click", function (e) {
+/* =========================
+ELEMENTS
+========================= */
 
-    e.stopPropagation();
+const envelope = document.querySelector(".envelope");
 
-    gsap.to("#envelope-screen", {
-        opacity: 0,
-        duration: 1,
-        onComplete: function () {
+const envelopeTop = document.querySelector(".envelope-top");
 
-            envelopeScreen.style.display = "none";
+const letter = document.querySelector(".letter");
 
-            hero.style.display = "flex";
+const openBtn = document.getElementById("openInvitation");
 
-            gsap.from(".hero-content", {
-                y: 80,
-                opacity: 0,
-                duration: 1.2
-            });
+const envelopeScreen = document.getElementById("envelope-screen");
 
-        }
+const invitation = document.getElementById("mainInvitation");
+
+/* =========================
+INITIAL STATE
+========================= */
+
+gsap.set(invitation,{
+    display:"none",
+    opacity:0
+});
+
+gsap.set(openBtn,{
+    opacity:0,
+    pointerEvents:"none"
+});
+
+/* =========================
+ENVELOPE IDLE ANIMATION
+========================= */
+
+gsap.to(".envelope",{
+
+    y:-8,
+
+    duration:2,
+
+    repeat:-1,
+
+    yoyo:true,
+
+    ease:"power1.inOut"
+
+});
+
+/* =========================
+GOLD GLOW
+========================= */
+
+gsap.to(".envelope-shadow",{
+
+    scale:1.08,
+
+    duration:2,
+
+    repeat:-1,
+
+    yoyo:true,
+
+    ease:"sine.inOut"
+
+});
+
+/* =========================
+OPEN ENVELOPE
+========================= */
+
+let opened=false;
+
+envelope.addEventListener("click",()=>{
+
+    if(opened) return;
+
+    opened=true;
+
+    const tl=gsap.timeline();
+
+    tl.to(envelopeTop,{
+
+        rotationX:-180,
+
+        duration:1,
+
+        transformOrigin:"top center",
+
+        ease:"power2.inOut"
+
+    })
+
+    .to(letter,{
+
+        y:-150,
+
+        duration:1.3,
+
+        ease:"power3.out"
+
+    },"-=0.2")
+
+    .to(openBtn,{
+
+        opacity:1,
+
+        pointerEvents:"auto",
+
+        duration:.5
 
     });
 
