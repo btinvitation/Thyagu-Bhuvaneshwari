@@ -386,8 +386,8 @@ ENVELOPE LANDING PAGE
 
     padding:15px;
 
-    transform:translateY(100px);
-
+    transform:translateY(0);
+    z-index:2;
 }
 
 
