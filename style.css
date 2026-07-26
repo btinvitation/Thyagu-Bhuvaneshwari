@@ -864,3 +864,47 @@ button:hover{
     transform:scale(1.05);
 
 }
+
+/* =========================
+FALLING FLOWER PETALS
+========================= */
+
+.petal{
+
+    position:absolute;
+
+    top:-20px;
+
+    width:12px;
+
+    height:12px;
+
+    background:#d4af37;
+
+    border-radius:50% 0 50% 0;
+
+    transform:rotate(45deg);
+
+    animation:fall linear infinite;
+
+    opacity:.8;
+
+}
+
+
+@keyframes fall{
+
+    0%{
+
+        transform:translateY(-20px) rotate(45deg);
+
+    }
+
+
+    100%{
+
+        transform:translateY(110vh) rotate(360deg);
+
+    }
+
+}
