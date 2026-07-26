@@ -4,85 +4,125 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Bhuvaneshwari ❤️ Thyagu Reception</title>
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<title>
+Bhuvaneshwari ❤️ Thyagu Reception
+</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<!-- Google Fonts -->
 
-<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+
+<!-- GSAP -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+
+<!-- AOS -->
+
+<link
+href="https://unpkg.com/aos@2.3.4/dist/aos.css"
+rel="stylesheet">
+
+<script
+src="https://unpkg.com/aos@2.3.4/dist/aos.js">
+</script>
+
+<link
+rel="stylesheet"
+href="style.css">
 
 </head>
 
 <body>
 
-<!-- Background -->
+<!-- ===========================
+LOADING SCREEN
+=========================== -->
 
-<div class="background"></div>
+<div id="loader">
 
-  <!-- ===========================
-Luxury Envelope
-============================ -->
+<div class="loader-content">
 
-<div id="envelope-screen">
+<div class="loader-ring"></div>
 
-    <div class="envelope">
-
-        <div class="envelope-back"></div>
-
-        <div class="letter">
-
-            <img src="assets/images/invitation-card.jpg.JPG"
-                 alt="Invitation">
-
-            <button id="openLetter">
-                Open Invitation
-            </button>
-
-        </div>
-
-        <div class="envelope-flap"></div>
-
-    </div>
-
-</div>
-<!-- Hero Section -->
-
-<section class="hero">
-
-<div class="overlay"></div>
-
-<div class="hero-content">
-
-<h3 class="welcome">
-Together With Their Families
-</h3>
-
-<h1 class="names">
+<h2>
 Bhuvaneshwari
 <span>&</span>
 Thyagu
-</h1>
+</h2>
 
-<p class="invite">
-Request the pleasure of your gracious presence
-at their Reception Ceremony
+<p>
+Reception Invitation
 </p>
 
+</div>
+
+</div>
+
+<!-- ===========================
+ENVELOPE SCREEN
+=========================== -->
+
+<section id="envelope-screen">
+
+<div class="particles"></div>
+
+<div class="envelope-wrapper">
+
+<div class="tap-text">
+
+Tap To Open
+
+</div>
+
+<div class="envelope">
+
+<div class="envelope-shadow"></div>
+
+<div class="envelope-back"></div>
+
+<div class="envelope-left"></div>
+
+<div class="envelope-right"></div>
+
+<div class="envelope-bottom"></div>
+
+<div class="envelope-top">
+
+<div class="wax-seal">
+
+❤
+
+</div>
+
+</div>
+
+<div class="letter">
+
+<div class="letter-inner">
+
+<img
+src="assets/images/invitation-card.jpg.JPG"
+alt="Invitation">
+
 <button id="openInvitation">
+
 Open Invitation
+
 </button>
 
-<div class="scroll-indicator">
-
-<span>Scroll Down to View More</span>
-
-<div class="mouse">
-
-<div class="wheel"></div>
+</div>
 
 </div>
 
@@ -91,10 +131,185 @@ Open Invitation
 </div>
 
 </section>
+<!-- ===========================
+MAIN INVITATION
+=========================== -->
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+<section id="mainInvitation">
 
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <!-- Background -->
+
+    <div class="hero-bg"></div>
+
+    <!-- Hero -->
+
+    <section class="hero">
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+
+            <h4 class="family-text">
+
+                Together With Their Families
+
+            </h4>
+
+            <h1>
+
+                Bhuvaneshwari
+
+                <span>&</span>
+
+                Thyagu
+
+            </h1>
+
+            <p>
+
+                Request the pleasure of your gracious presence
+                at the Reception Ceremony
+
+            </p>
+
+        </div>
+
+        <div class="scroll-down">
+
+            <span>
+
+                Scroll Down To View More
+
+            </span>
+
+            <div class="mouse">
+
+                <div class="wheel"></div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Bride & Groom -->
+
+    <section id="couple">
+
+        <div class="container">
+
+            <div class="photo">
+
+                <img src="assets/images/photo1.jpg.PNG"
+                     alt="Bride">
+
+            </div>
+
+            <div class="photo">
+
+                <img src="assets/images/photo2.jpg.PNG"
+                     alt="Groom">
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Scratch Card -->
+
+    <section id="scratchSection">
+
+        <h2>
+
+            Scratch To Reveal
+
+        </h2>
+
+        <canvas id="scratchCanvas"></canvas>
+
+    </section>
+
+    <!-- Countdown -->
+
+    <section id="countdownSection">
+
+        <h2>
+
+            Reception Begins In
+
+        </h2>
+
+        <div id="countdown"></div>
+
+    </section>
+
+    <!-- Reception Details -->
+
+    <section id="details">
+
+        <h2>
+
+            Reception
+
+        </h2>
+
+        <p>
+
+            30 August 2026
+
+        </p>
+
+        <p>
+
+            1:30 PM – 3:00 PM
+
+        </p>
+
+        <p>
+
+            Groom's House,
+            Kamaraj Nagar,
+            Paramanandal,
+            Chengam
+
+        </p>
+
+    </section>
+
+    <!-- Google Maps -->
+
+    <section id="location">
+
+        <a id="mapButton"
+           target="_blank">
+
+            View On Google Maps
+
+        </a>
+
+    </section>
+
+    <!-- Thank You -->
+
+    <section id="thanks">
+
+        <h2>
+
+            Thank You
+
+        </h2>
+
+        <p>
+
+            We look forward to celebrating
+            this beautiful occasion with you.
+
+        </p>
+
+    </section>
+
+</section>
 
 <script src="script.js"></script>
 
