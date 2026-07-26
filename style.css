@@ -390,11 +390,11 @@ ENVELOPE LANDING PAGE
 
     padding:15px;
 
-    transform:translateY(0);
+    transform:translateY(80px);
 
     z-index:1;
 
-    opacity:1;
+    opacity:0;
 
     pointer-events:none;
 
