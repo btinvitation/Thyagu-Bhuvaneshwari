@@ -313,11 +313,7 @@ ENVELOPE LANDING PAGE
 /* TOP FLAP */
 
 .top-fold{
-#envelope .top-fold{
 
-    z-index:5;
-
-}  
     position:absolute;
 
     top:0;
@@ -337,6 +333,15 @@ ENVELOPE LANDING PAGE
     transform-origin:top;
 
     transition:1s;
+
+    z-index:5;
+
+}
+
+
+#envelope .top-fold{
+
+    z-index:5;
 
 }
 
@@ -392,7 +397,7 @@ ENVELOPE LANDING PAGE
 
     transform:translateY(80px);
 
-    z-index:1;
+    z-index:10;
 
     opacity:0;
 
