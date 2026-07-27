@@ -29,6 +29,7 @@ body{
 }
 
 
+
 /* =========================
 LOADER
 ========================= */
@@ -53,38 +54,32 @@ LOADER
 }
 
 
-.loader-box{
+.loader-content{
 
     text-align:center;
 
 }
 
 
-.loader-box h1{
+.loader-content h1{
 
     font-family:'Great Vibes',cursive;
 
-    font-size:60px;
+    font-size:65px;
 
     color:#d4af37;
 
 }
 
 
-.loader-box span{
-
-    color:white;
-
-}
-
-
-.loader-box p{
-
-    letter-spacing:4px;
+.loader-content p{
 
     margin-top:20px;
 
+    letter-spacing:4px;
+
 }
+
 
 
 
@@ -107,7 +102,7 @@ ENVELOPE SECTION
 
     background:
 
-    radial-gradient(circle,#3b2a10,#080808 70%);
+    radial-gradient(circle,#4b3515,#080808 70%);
 
 }
 
@@ -121,31 +116,20 @@ ENVELOPE SECTION
 
 .tap-text{
 
+    margin-top:40px;
+
     color:#d4af37;
 
     letter-spacing:3px;
 
-    margin-bottom:30px;
-
-    animation:pulse 2s infinite;
-
 }
 
-
-@keyframes pulse{
-
-    50%{
-
-        opacity:.4;
-
-    }
-
-}
 
 
 
 
 /* ENVELOPE */
+
 
 .envelope{
 
@@ -161,20 +145,108 @@ ENVELOPE SECTION
 
 
 
-
 .back{
 
     position:absolute;
 
     inset:0;
 
-    background:#9b7524;
+    background:#9b7424;
 
     border-radius:12px;
 
 }
 
 
+
+
+
+/* CARD */
+
+
+.letter{
+
+    position:absolute;
+
+    width:280px;
+
+    height:380px;
+
+    left:25px;
+
+    top:20px;
+
+    background:white;
+
+    padding:15px;
+
+    border-radius:10px;
+
+    opacity:0;
+
+    transform:translateY(80px);
+
+    z-index:2;
+
+    transition:1s;
+
+}
+
+
+
+.envelope.open .letter{
+
+    opacity:1;
+
+    transform:translateY(-170px);
+
+}
+
+
+
+
+
+.letter img{
+
+    width:100%;
+
+    height:280px;
+
+    object-fit:cover;
+
+}
+
+
+
+
+
+#openBtn{
+
+    width:100%;
+
+    margin-top:15px;
+
+    padding:12px;
+
+    border:none;
+
+    border-radius:30px;
+
+    background:#d4af37;
+
+    color:#000;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+}
+
+
+
+
+
+/* ENVELOPE FRONT */
 
 
 .front-left{
@@ -189,9 +261,12 @@ ENVELOPE SECTION
 
     border-width:115px 165px 115px 0;
 
-    border-color:transparent #c49a32 transparent transparent;
+    border-color:transparent #c4952d transparent transparent;
+
+    z-index:3;
 
 }
+
 
 
 .front-right{
@@ -206,7 +281,9 @@ ENVELOPE SECTION
 
     border-width:115px 0 115px 165px;
 
-    border-color:transparent transparent transparent #c49a32;
+    border-color:transparent transparent transparent #c4952d;
+
+    z-index:3;
 
 }
 
@@ -226,10 +303,14 @@ ENVELOPE SECTION
 
     border-color:transparent transparent #d4af37 transparent;
 
+    z-index:4;
+
 }
 
 
 
+
+/* FLAP */
 
 
 .flap{
@@ -240,19 +321,25 @@ ENVELOPE SECTION
 
     left:0;
 
-    width:0;
-
-    height:0;
-
     border-left:165px solid transparent;
 
     border-right:165px solid transparent;
 
-    border-top:120px solid #e0b93f;
+    border-top:120px solid #e1b83c;
 
     transform-origin:top;
 
     z-index:5;
+
+    transition:1s;
+
+}
+
+
+
+.envelope.open .flap{
+
+    transform:rotateX(180deg);
 
 }
 
@@ -263,7 +350,7 @@ ENVELOPE SECTION
 
     position:absolute;
 
-    top:-105px;
+    top:-100px;
 
     left:-25px;
 
@@ -271,80 +358,15 @@ ENVELOPE SECTION
 
     height:50px;
 
-    border-radius:50%;
-
     background:#8b0000;
+
+    border-radius:50%;
 
     display:flex;
 
     justify-content:center;
 
     align-items:center;
-
-}
-
-
-
-
-/* LETTER */
-
-.letter{
-
-    position:absolute;
-
-    width:280px;
-
-    height:380px;
-
-    background:white;
-
-    left:25px;
-
-    top:20px;
-
-    padding:15px;
-
-    border-radius:10px;
-
-    opacity:0;
-
-    transform:translateY(80px);
-
-    z-index:3;
-
-}
-
-
-
-.letter img{
-
-    width:100%;
-
-    height:280px;
-
-    object-fit:cover;
-
-}
-
-
-
-#openBtn{
-
-    width:100%;
-
-    margin-top:15px;
-
-    padding:12px;
-
-    border:none;
-
-    border-radius:30px;
-
-    background:#d4af37;
-
-    font-weight:bold;
-
-    cursor:pointer;
 
 }
 
@@ -381,7 +403,7 @@ STORY
 
 #story h2{
 
-    margin:30px;
+    margin:25px;
 
     font-family:'Cinzel',serif;
 
@@ -405,6 +427,7 @@ STORY
 
 
 
+
 /* =========================
 DETAILS
 ========================= */
@@ -420,7 +443,7 @@ DETAILS
 
 
 
-.card{
+.details-card{
 
     max-width:500px;
 
@@ -435,7 +458,8 @@ DETAILS
 }
 
 
-.card h1{
+
+.details-card h1{
 
     font-family:'Great Vibes',cursive;
 
@@ -446,13 +470,15 @@ DETAILS
 }
 
 
-.card h3{
-
-    color:#d4af37;
+.details-card h3{
 
     margin-top:25px;
 
+    color:#d4af37;
+
 }
+
+
 
 
 
@@ -473,6 +499,7 @@ GALLERY
 }
 
 
+
 #gallery h1{
 
     font-family:'Great Vibes',cursive;
@@ -484,7 +511,7 @@ GALLERY
 }
 
 
-.photos{
+.gallery{
 
     margin-top:40px;
 
@@ -499,7 +526,8 @@ GALLERY
 }
 
 
-.photos img{
+
+.gallery img{
 
     width:280px;
 
@@ -512,6 +540,8 @@ GALLERY
     border:2px solid #d4af37;
 
 }
+
+
 
 
 
@@ -539,6 +569,7 @@ CLOSING
 }
 
 
+
 #closing h1{
 
     font-family:'Great Vibes',cursive;
@@ -564,16 +595,16 @@ CLOSING
 
 @media(max-width:600px){
 
-    .envelope{
+    .loader-content h1{
 
-        transform:scale(.85);
+        font-size:45px;
 
     }
 
 
-    .loader-box h1{
+    .envelope{
 
-        font-size:45px;
+        transform:scale(.85);
 
     }
 
