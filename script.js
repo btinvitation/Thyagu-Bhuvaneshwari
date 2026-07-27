@@ -1,6 +1,6 @@
 /* ==========================================
    BHUVANESHWARI ❤️ THYAGU
-   INVITATION ANIMATIONS
+   INVITATION SCRIPT
 ========================================== */
 
 
@@ -10,87 +10,30 @@ LOADER
 
 window.addEventListener("load",()=>{
 
-    setTimeout(()=>{
-
-        gsap.to("#loader",{
-
-            opacity:0,
-
-            duration:1,
-
-            onComplete:()=>{
-
-                document.querySelector("#loader").style.display="none";
-
-            }
-
-        });
-
-    },2000);
-
-
-});
-
-
-
-/* =========================
-ENVELOPE OPEN
-========================= */
-
-
-const openBtn = document.getElementById("openBtn");
-
-const topFold = document.querySelector(".top-fold");
-
-const letter = document.querySelector(".letter");
-
-gsap.set(letter,{
-    opacity:0,
-    y:80
-});
-openBtn.addEventListener("click",()=>{
-
-console.log("Button clicked");
-    gsap.to(topFold,{
-
-        rotationX:-180,
-
-        duration:1.2,
-
-        ease:"power2.inOut"
-
-    });
-
-
-    gsap.to(letter,{
-
-    opacity:1,
-
-    y:-180,
-
-    duration:1.5,
-
-    delay:.5,
-
-    ease:"power3.out"
-
-});
-
-
-    gsap.to(".tap-text",{
+    gsap.to("#loader",{
 
         opacity:0,
 
-        duration:.5
+        duration:1.2,
+
+        delay:1.5,
+
+        onComplete:()=>{
+
+            document.getElementById("loader").style.display="none";
+
+        }
 
     });
 
-
 });
 
+
+
 /* =========================
-AOS INITIALIZATION
+AOS
 ========================= */
+
 
 AOS.init({
 
@@ -102,63 +45,66 @@ AOS.init({
 
 
 
-/* =========================
-FLOWER PETALS
-========================= */
-
-function createPetals(){
-
-    const container = document.querySelector(".particles");
-
-
-    for(let i=0;i<40;i++){
-
-        let petal=document.createElement("span");
-
-
-        petal.className="petal";
-
-
-        petal.style.left=Math.random()*100+"%";
-
-
-        petal.style.animationDuration=
-
-        (5+Math.random()*5)+"s";
-
-
-        petal.style.animationDelay=
-
-        Math.random()*5+"s";
-
-
-        container.appendChild(petal);
-
-    }
-
-}
-
-
-createPetals();
-
 
 
 /* =========================
-SMOOTH OPEN EFFECT
+ENVELOPE OPENING
 ========================= */
 
 
-window.addEventListener("scroll",()=>{
+const openBtn = document.getElementById("openBtn");
+
+const flap = document.querySelector(".flap");
+
+const letter = document.querySelector(".letter");
 
 
-    let scrollValue = window.scrollY;
+gsap.set(letter,{
+
+    opacity:0,
+
+    y:80
+
+});
 
 
-    gsap.to(".gold-glow",{
 
-        y:scrollValue*0.2,
+openBtn.addEventListener("click",()=>{
 
-        duration:0.5
+
+    gsap.to(flap,{
+
+        rotateX:-180,
+
+        duration:1.2,
+
+        ease:"power2.inOut"
+
+    });
+
+
+
+    gsap.to(letter,{
+
+        opacity:1,
+
+        y:-180,
+
+        duration:1.5,
+
+        delay:.5,
+
+        ease:"power3.out"
+
+    });
+
+
+
+    gsap.to(".tap-text",{
+
+        opacity:0,
+
+        duration:.5
 
     });
 
